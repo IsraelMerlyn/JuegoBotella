@@ -47,4 +47,12 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     //animacion lottie
     implementation("com.airbnb.android:lottie:5.0.3")
+    //llamando activity
+    implementation("androidx.activity:activity-ktx:1.9.3")
+    //llamando viewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
+    //llamando fragment
+    implementation("androidx.fragment:fragment-ktx:1.8.5")
+    //liveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.7")
 }

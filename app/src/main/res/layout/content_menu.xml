@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
     >
@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/fondo_menu_degradado">
+            <!--imagen de LA ESTRELLA -->
 
             <ImageView
                 android:id="@+id/idImgEstrella"
@@ -36,6 +37,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
+            <!--imagen del  VOLUMEN-->
+
             <ImageView
                 android:id="@+id/idImgVolumen"
                 android:layout_width="wrap_content"
@@ -43,10 +46,63 @@
                 android:layout_margin="10dp"
                 android:src="@drawable/ic_volumen"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/idImgRegla"
+                app:layout_constraintEnd_toStartOf="@+id/idImgReglas"
                 app:layout_constraintStart_toEndOf="@+id/idImgEstrella"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
+<!--imagen del NO VOLUMEN-->
+            <ImageView
+                android:id="@+id/idImgNoVolumen"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_volumen"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/idImgReglas"
+                app:layout_constraintStart_toEndOf="@+id/idImgEstrella"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"
+                />
+
+<!--            IMAGEN REGLAS DEL JUEGO-->
+
+            <ImageView
+                android:id="@+id/idImgReglas"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_reglas"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/idImgVolumen"
+                app:layout_constraintEnd_toStartOf="@+id/idImgAgregarReto"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+
+                />
+            <ImageView
+                android:id="@+id/idImgAgregarReto"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_agregar_reto"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/idImgReglas"
+                app:layout_constraintEnd_toStartOf="@+id/idBtnCompartir"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/idBtnCompartir"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_compartir"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/idImgAgregarReto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
 
 
 

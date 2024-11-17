@@ -37,6 +37,8 @@ android {
 
 dependencies {
 
+
+    val nav_version ="2.8.4"
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -56,6 +58,6 @@ dependencies {
     //liveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.7")
     //navigator
-    implementation("androidx.navigation:navigation-fragment:2.8.4")
-    implementation("androidx.navigation:navigation-ui-ktx:2.8.4")
+    implementation("androidx.navigation:navigation-fragment:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 }

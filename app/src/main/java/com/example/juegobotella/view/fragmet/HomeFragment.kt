@@ -43,6 +43,14 @@ class HomeFragment : Fragment() {
     private  fun observadorViewModel(){
         observadorRotacionBotella()
         observadorHabilitarBoton()
+        observadorCerpentinaOn()
+    }
+
+    private fun observadorCerpentinaOn() {
+        juegoViewModel.isCerpentina.observe(viewLifecycleOwner) { status ->
+            binding.lottieCerpentina.isVisible = status
+            binding.lottieCerpentina.playAnimation()
+        }
     }
 
     private fun observadorHabilitarBoton() {

@@ -22,6 +22,10 @@ class JuegoViewModel : ViewModel() {
     private val _habilitarBoton = MutableLiveData(true)
     val hailitarBoton: LiveData<Boolean> get() = _habilitarBoton
 
+    //habilitar animacion serpentina
+    private  val _isCerpentina = MutableLiveData(false)
+    val isCerpentina: LiveData<Boolean> get() = _isCerpentina
+
     fun splashScreen(activity: Spash) {
         val handler = Handler()
         handler.postDelayed({
@@ -31,7 +35,10 @@ class JuegoViewModel : ViewModel() {
     }
 
     fun girarBotella() {
-        _habilitarBoton.value= false
+
+        _habilitarBoton.value = false
+        _isCerpentina.value = true
+
         val grados = (Math.random() * 3600) + 1080
         val rotacion = RotateAnimation(
             0f, grados.toFloat(),
@@ -47,6 +54,7 @@ class JuegoViewModel : ViewModel() {
             }
 
             override fun onAnimationEnd(animation: Animation?) {
+                _isCerpentina.value = false
                 _habilitarBoton.value = true
             }
 

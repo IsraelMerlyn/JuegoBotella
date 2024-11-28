@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import com.example.juegobotella.R
 import com.example.juegobotella.databinding.FragmentHomeBinding
+import com.example.juegobotella.viewmodel.JuegoViewModel
 
 class HomeFragment : Fragment() {
-
+    private  val  juegoViewModel: JuegoViewModel by viewModels()
     private lateinit var binding: FragmentHomeBinding
 
 
@@ -27,11 +29,23 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         controladores(view)
+        observadorViewModel()
+
     }
 
-    private  fun controladores(view: View){
+    private fun controladores(view: View) {
         binding.btnGirar.setOnClickListener {
-            Toast.makeText(context, "Hola", Toast.LENGTH_LONG).show()
+            juegoViewModel.girarBotella()
+        }
+    }
+
+    private  fun observadorViewModel(){
+        observadorRotacionBotella()
+    }
+
+    private fun observadorRotacionBotella() {
+        juegoViewModel.rotacionBotella.observe(viewLifecycleOwner){rotacion ->
+            binding.ivBotella.startAnimation(rotacion)
         }
     }
 }

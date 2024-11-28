@@ -5,4 +5,6 @@
     <color name="color_general">#FF7A05</color>
     <color name="gradiente_centro">#212121</color>
     <color name="gradiente_final">#424242</color>
+    <color name="btnGirar">#424242</color>
+    <color name="fondo">#FF7F7F</color>
 </resources>

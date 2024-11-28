@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/fondo"
+    android:background="@color/fondo"
     tools:context=".view.fragmet.HomeFragment">
 
 
@@ -26,8 +26,52 @@
             android:layout_height="350dp"
             android:src="@drawable/botella"
             app:layout_constraintTop_toBottomOf="@+id/ic_content_menu"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/cl_contenedor_boton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints"
+
+            />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_contenedor_boton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_cerpentina"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="false"
+            android:visibility="gone"
+            app:lottie_rawRes="@raw/cerpentina"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/btnGirar"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:lottie_autoPlay="true"
+            app:lottie_colorFilter="@color/btnGirar"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/boton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

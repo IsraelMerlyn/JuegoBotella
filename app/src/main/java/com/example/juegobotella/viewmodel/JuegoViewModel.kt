@@ -18,6 +18,10 @@ class JuegoViewModel : ViewModel() {
     private val _rotacionBotella = MutableLiveData<RotateAnimation>()
     val rotacionBotella: LiveData<RotateAnimation> get() = _rotacionBotella
 
+    //variable que se encarga de observar el giro
+    private val _habilitarBoton = MutableLiveData(true)
+    val hailitarBoton: LiveData<Boolean> get() = _habilitarBoton
+
     fun splashScreen(activity: Spash) {
         val handler = Handler()
         handler.postDelayed({
@@ -27,6 +31,7 @@ class JuegoViewModel : ViewModel() {
     }
 
     fun girarBotella() {
+        _habilitarBoton.value= false
         val grados = (Math.random() * 3600) + 1080
         val rotacion = RotateAnimation(
             0f, grados.toFloat(),
@@ -42,7 +47,7 @@ class JuegoViewModel : ViewModel() {
             }
 
             override fun onAnimationEnd(animation: Animation?) {
-
+                _habilitarBoton.value = true
             }
 
             override fun onAnimationRepeat(animation: Animation?) {

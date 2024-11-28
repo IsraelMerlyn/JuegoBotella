@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.example.juegobotella.R
 import com.example.juegobotella.databinding.FragmentHomeBinding
@@ -41,6 +42,13 @@ class HomeFragment : Fragment() {
 
     private  fun observadorViewModel(){
         observadorRotacionBotella()
+        observadorHabilitarBoton()
+    }
+
+    private fun observadorHabilitarBoton() {
+        juegoViewModel.hailitarBoton.observe(viewLifecycleOwner){
+            habilitarBoton -> binding.btnGirar.isVisible=habilitarBoton
+        }
     }
 
     private fun observadorRotacionBotella() {

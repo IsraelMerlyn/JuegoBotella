@@ -8,11 +8,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.example.juegobotella.R
 import com.example.juegobotella.databinding.FragmentHomeBinding
 import com.example.juegobotella.viewmodel.JuegoViewModel
 
 class HomeFragment : Fragment() {
+
+    private  lateinit var  navController: NavController
     private  val  juegoViewModel: JuegoViewModel by viewModels()
     private lateinit var binding: FragmentHomeBinding
 
@@ -35,6 +39,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun controladores(view: View) {
+        //navegacion hacia otra vista
+        navController = Navigation.findNavController(view)
+        binding.icContentMenu.idImgReglas.setOnClickListener {
+            navController.navigate(R.id.action_homeFragment_to_reglasJuegoFragment)
+        }
+
         binding.btnGirar.setOnClickListener {
             juegoViewModel.girarBotella()
         }

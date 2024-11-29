@@ -38,8 +38,38 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/cl_contenedor"
                 tools:ignore="MissingConstraints" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/iv_reto"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/bg_circulo_reto"
+            android:padding="2dp"
+            android:src="@drawable/logoutiltek"
+            app:layout_constraintBottom_toTopOf="@+id/cl_contenedor"
+            app:layout_constraintEnd_toEndOf="@+id/cl_contenedor"
+            app:layout_constraintStart_toStartOf="@id/cl_contenedor"
+            app:layout_constraintTop_toTopOf="@id/cl_contenedor"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btn_cerrar"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/purple"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:text="@string/btnCerrarDialogo"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cl_contenedor"
+            app:layout_constraintEnd_toEndOf="@id/cl_contenedor"
+            app:layout_constraintStart_toStartOf="@id/cl_contenedor"
+            app:layout_constraintTop_toBottomOf="@id/cl_contenedor"
+
+            />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

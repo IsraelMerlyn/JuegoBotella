@@ -41,6 +41,7 @@ class HomeFragment : Fragment() {
         //  navController = Navigation.findNavController(view)
         binding.icContentMenu.idImgReglas.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_reglasJuegoFragment)
+            juegoViewModel.statusShowDialogo(false)
         }
 
         binding.btnGirar.setOnClickListener {

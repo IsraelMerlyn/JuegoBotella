@@ -84,4 +84,8 @@ class JuegoViewModel : ViewModel() {
     fun dialogoMostrarReto(context: Context, mensajeReto: String) {
         showDialogMostrarReto(context, mensajeReto)
     }
+
+    fun statusShowDialogo(status: Boolean) {
+        _statusShowDialog.value = status
+    }
 }

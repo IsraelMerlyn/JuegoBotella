@@ -52,7 +52,18 @@ class HomeFragment : Fragment() {
         observadorRotacionBotella()
         observadorHabilitarBoton()
         observadorCerpentinaOn()
+        observadorDialogReto()
 
+    }
+
+    private fun observadorDialogReto() {
+       juegoViewModel.statusShowDialog.observe(viewLifecycleOwner){ status ->
+           if (status) {
+               val mensajeReto = "Debes tomar 2 tragos"
+               juegoViewModel.dialogoMostrarReto(requireContext(), mensajeReto)
+           }
+
+       }
     }
 
     private fun observadorCerpentinaOn() {

@@ -1,5 +1,6 @@
 package com.example.juegobotella.viewmodel
 
+import android.content.Context
 import android.content.Intent
 import android.os.Handler
 import android.view.animation.Animation
@@ -11,6 +12,7 @@ import androidx.lifecycle.ViewModel
 import com.example.juegobotella.utils.Constantes.TIEMPO
 import com.example.juegobotella.view.MainActivity
 import com.example.juegobotella.view.Spash
+import com.example.juegobotella.view.dialogo.DialogoMostrarReto.showDialogMostrarReto
 
 class JuegoViewModel : ViewModel() {
 
@@ -29,6 +31,12 @@ class JuegoViewModel : ViewModel() {
     //Estado de movimiento de la botella
     private val _estadoRotacionBotella = MutableLiveData(false)
     val estadoRotacionBotella: LiveData<Boolean> get() = _estadoRotacionBotella
+
+
+    //Estatus del Dialogo
+    private  val  _statusShowDialog = MutableLiveData(false)
+    val  statusShowDialog:LiveData<Boolean> get() = _statusShowDialog
+
 
     fun splashScreen(activity: Spash) {
         val handler = Handler()
@@ -61,6 +69,7 @@ class JuegoViewModel : ViewModel() {
                 _isCerpentina.value = false
                 _habilitarBoton.value = true
                 _estadoRotacionBotella.value = false
+                _statusShowDialog.value = true
             }
 
             override fun onAnimationRepeat(animation: Animation?) {
@@ -70,5 +79,9 @@ class JuegoViewModel : ViewModel() {
         })
 
         _rotacionBotella.value = rotacion
+    }
+
+    fun dialogoMostrarReto(context: Context, mensajeReto: String) {
+        showDialogMostrarReto(context, mensajeReto)
     }
 }
